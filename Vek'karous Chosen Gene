@@ -20,7 +20,7 @@ namespace Slaver&Runts
             {
                 return true;
             }
-            var SlaverGrpsDefs = GlobalSettings.GetVek’karousChosenGroups();
+            var SlaverGrpsDefs = GlobalSettings.GetVekkarousChosenGroups();
             foreach (var group in SlaverGrpsDefs)
             {
                 if (group.Contains(geneA) && group.Contains(geneB))
@@ -77,7 +77,7 @@ namespace Slaver&Runts
                 percentShared = (float)sharedRomanceChanceGenes / (sharedRomanceChanceGenes + unsharedRomanceChanceGenes);
                 percentShared -= differentLevel ? 0.25f : 0;
             }
-            else if (BothVek'karous Chosen)
+            else if (BothVekkarousChosen)
             {
                 // Handle the case where both are Slaver-like but have no "missing romance" genes at all.
                 if (differentLevel && unsharedRomanceChanceGenes == 0 && sharedRomanceChanceGenes == 0)
@@ -91,7 +91,7 @@ namespace Slaver&Runts
             }
 
             ThoughtState result;
-            if (BothVek'karous Chosen)
+            if (BothVekkarousChosen)
             {
                 result = percentShared switch
                 {
@@ -152,22 +152,22 @@ namespace Slaver&Runts
                 var tgtActiveGenes = GeneHelpers.GetAllActiveGeneDefs(targetPawn);
                 var obActiveGenes = GeneHelpers.GetAllActiveGeneDefs(observingPawn);
 
-                var targetApperance = SlaverApperanceUtils.Slaverstate.Neutral;
+                var targetApperance = SlaverApperanceUtils.SlaverState.Neutral;
                 if (tgtActiveGenes.Contains(Defs.SlaverApperanceStandards))
-                    targetApperance = SlaverApperanceUtils.Slaverstate.Slaver;
+                    targetApperance = SlaverApperanceUtils.SlaverState.Slaver;
                 else if (tgtActiveGenes.Contains(Defs.SlaverApperanceStandards_Lesser))
-                    targetApperance = SlaverApperanceUtils.Slaverstate.Runtix;
+                    targetApperance = SlaverApperanceUtils.SlaverState.Runtix;
 
-                var observerApperance = SlaverApperanceUtils.Slaverstate.Neutral;
+                var observerApperance = SlaverApperanceUtils.SlaverState.Neutral;
                 if (obActiveGenes.Contains(Defs.SlaverApperanceStandards))
-                    observerApperance = SlaverApperanceUtils.Slaverstate.Slaver;
+                    observerApperance = SlaverApperanceUtils.SlaverState.Slaver;
                 else if (obActiveGenes.Contains(Defs.SlaverApperanceStandards_Lesser))
-                    observerApperance = SlaverApperanceUtils.Slaverstate.Runtix;
+                    observerApperance = SlaverApperanceUtils.SlaverState.Runtix;
 
 
-                if (!(targetApperance == SlaverApperanceUtils.Slaverstate.Neutral && targetApperance == observerApperance)) // If both are neutral, no need to check.
+                if (!(targetApperance == SlaverApperanceUtils.SlaverState.Neutral && targetApperance == observerApperance)) // If both are neutral, no need to check.
                 {
-                    bool someoneIsSlaver = targetApperance == SlaverApperanceUtils.Slaverstate.Slaver || observerApperance == SlaverApperanceUtils.Slaverstate.Slaver;
+                    bool someoneIsSlaver = targetApperance == SlaverApperanceUtils.SlaverState.Slaver || observerApperance == SlaverApperanceUtils.SlaverState.Slaver;
                     
                     int offsetState = 0;
                     if (someoneIsSlaver && !someTolerance)
