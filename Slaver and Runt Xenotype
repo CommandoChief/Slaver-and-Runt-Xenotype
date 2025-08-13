@@ -104,8 +104,8 @@
      </requiredMemes>
      <xenotypeSet Inherit="False">
        <xenotypeChances>
-         <Slavers MayRequire="Ludeon.RimWorld.Biotech">0.9</Slavers>
-        <Runtixs MayRequire="Ludeon.RimWorld.Biotech">0.5</Runtixs>
+         <Slaver MayRequire="Ludeon.RimWorld.Biotech">0.9</Slaver>
+        <Runtix MayRequire="Ludeon.RimWorld.Biotech">0.5</Runtix>
      </xenotypeChances>
      </xenotypeSet>
      <disallowedPrecepts>
@@ -140,11 +140,12 @@
      <li MayRequire="Ludeon.RimWorld.Ideology">Guilty</li>
      <li MayRequire="Ludeon.RimWorld.Ideology">Raider</li>
    </requiredMemes>
-   <xenotypeSet Inherit="False">
-     <xenotypeChances>
-       <Klawtherian MayRequire="Ludeon.RimWorld.Biotech">1</Klawtherian>
+    <xenotypeSet Inherit="False">
+       <xenotypeChances>
+         <Slaver MayRequire="Ludeon.RimWorld.Biotech">0.9</Slaver>
+        <Runtix MayRequire="Ludeon.RimWorld.Biotech">0.5</Runtix>
      </xenotypeChances>
-   </xenotypeSet>
+     </xenotypeSet>
    <disallowedPrecepts>
      <li MayRequire="Ludeon.RimWorld.Ideology">ApparelDesired_Strong_Subordinate</li>
      <li MayRequire="Ludeon.RimWorld.Ideology">ApparelDesired_Soft_Subordinate</li>
