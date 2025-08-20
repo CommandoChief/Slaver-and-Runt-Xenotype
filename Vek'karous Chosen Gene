@@ -33,18 +33,18 @@ namespace Slaver&Runts
 
         public static ThoughtState GeSlaverApperanceThoughtState(List<GeneDef> targetGenes, SlaverState targetApperance, List<GeneDef> observerGenes, SlaverState observerApperance, int offset=0)
         {
-            bool bothSlaver = false;
+            bool BothVekkarousChosen = false;
             bool differentLevel = false;
             int sharedRomanceChanceGenes = 0;
             int unsharedRomanceChanceGenes = 0;
             if (observerApperance != SlaverState.Neutral && targetApperance != observerApperance)
             {
-                bothSlaver = true;
+                BothVekkarousChosen = true;
                 differentLevel = true;
             }
             else if (targetApperance == observerApperance)
             {
-                bothSlaver = true;
+                BothVekkarousChosen = true;
             }
 
             observerGenes.Where(x => x != Defs.SlaverApperanceStandards &&
